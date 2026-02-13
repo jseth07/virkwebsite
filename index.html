@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- =========================================================
+       HEAD: Meta + Title + Fonts
+       ========================================================= -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Virk Carpentry & Construction Ltd | Finish Carpentry in Edmonton</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================================================
+       THEME VARIABLES
+       ========================================================= */
+    :root {
+      --wood-dark: #2C1810;
+      --wood-medium: #5D4037;
+      --wood-light: #8D6E63;
+      --accent-gold: #D4AF37;
+      --cream: #F5F1E8;
+      --sage: #8B9D83;
+      --text-dark: #1A1A1A;
+      --text-light: #FFFFFF;
+    }
+
+    /* =========================================================
+       GLOBAL RESET + BASE
+       ========================================================= */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Crimson Pro", serif;
+      color: var(--text-dark);
+      background: var(--cream);
+      overflow-x: hidden;
+      padding-top: 86px; /* keep content below fixed nav */
+    }
+
+    a { color: inherit; }
+
+    /* =========================================================
+       NAVIGATION (TOP BAR)
+       ========================================================= */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--wood-dark);
+      padding: 1.1rem 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    nav .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    /* LOGO WRAPPER (now using an image) */
+    nav .logo {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      line-height: 1;
+      white-space: nowrap;
+      position: relative;
+    }
+
+    /* Logo image sizing */
+    nav .logo img {
+      height: 52px;      /* adjust to taste: 45 to 60 */
+      width: auto;
+      display: block;
+    }
+
+    /* Optional hover underline (kept from your original) */
+    nav .logo::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--accent-gold);
+      transition: width 0.35s ease;
+    }
+    nav .logo:hover::after { width: 100%; }
+
+    .nav-actions { display: flex; align-items: center; gap: 1rem; }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 400;
+      transition: color 0.25s ease;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .nav-links a::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background: var(--accent-gold);
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover { color: var(--accent-gold); }
+    .nav-links a:hover::before { width: 100%; }
+
+    .nav-links a.active { color: var(--accent-gold); }
+    .nav-links a.active::before { width: 100%; }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.75rem 1.1rem;
+      background: var(--accent-gold);
+      color: var(--wood-dark);
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 1px;
+      border-radius: 4px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+      white-space: nowrap;
+    }
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      filter: brightness(0.98);
+    }
+
+    .menu-btn {
+      display: none;
+      background: transparent;
+      border: 2px solid rgba(212,175,55,0.65);
+      color: var(--accent-gold);
+      font-family: "Bebas Neue", sans-serif;
+      letter-spacing: 2px;
+      padding: 0.55rem 0.9rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    /* =========================================================
+       HERO SECTION
+       ========================================================= */
+    .hero {
+      min-height: calc(100vh - 86px);
+      background:
+        linear-gradient(135deg, rgba(44, 24, 16, 0.9) 0%, rgba(93, 64, 55, 0.9) 100%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%235D4037" width="1200" height="800"/><g fill-opacity="0.25"><polygon fill="%23444" points="1200 800 0 800 0 0"/><polygon fill="%23333" points="1200 800 1200 0 600 400"/></g></svg>');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 3px,
+          rgba(0,0,0,0.025) 3px,
+          rgba(0,0,0,0.025) 6px
+        );
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      text-align: center;
+      color: var(--text-light);
+      z-index: 2;
+      max-width: 1000px;
+      padding: 0 2rem;
+    }
+
+    .hero h1 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 5rem;
+      letter-spacing: 6px;
+      margin-bottom: 0.8rem;
+      color: var(--accent-gold);
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+    }
+
+    .hero .tagline {
+      font-size: 1.7rem;
+      font-weight: 300;
+      letter-spacing: 2px;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero .description {
+      font-size: 1.15rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+      margin-bottom: 1.4rem;
+      opacity: 0.95;
+    }
+
+    .trust-lines {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0 auto 2.2rem;
+      max-width: 920px;
+    }
+    .trust-pill {
+      border: 1px solid rgba(212,175,55,0.35);
+      background: rgba(245,241,232,0.08);
+      padding: 0.6rem 0.9rem;
+      border-radius: 999px;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      color: var(--cream);
+    }
+
+    .hero .cta-buttons {
+      display: flex;
+      gap: 1.2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 1.15rem 2.7rem;
+      background: var(--accent-gold);
+      color: var(--wood-dark);
+      text-decoration: none;
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      border-radius: 4px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+      position: relative;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      filter: brightness(0.98);
+    }
+
+    .cta-button-secondary {
+      background: transparent;
+      border: 2px solid var(--accent-gold);
+      color: var(--accent-gold);
+    }
+
+    /* =========================================================
+       SECTIONS (GENERAL)
+       ========================================================= */
+    section {
+      padding: 6rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-lead {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: var(--text-dark);
+      margin-top: 1rem;
+      max-width: 950px;
+    }
+
+    h2 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 4rem;
+      color: var(--wood-dark);
+      margin-bottom: 1.5rem;
+      letter-spacing: 4px;
+      position: relative;
+      display: inline-block;
+    }
+    h2::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60%;
+      height: 4px;
+      background: var(--accent-gold);
+    }
+
+    /* =========================================================
+       ABOUT SECTION
+       ========================================================= */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-top: 3rem;
+      align-items: start;
+    }
+
+    .about-text {
+      font-size: 1.2rem;
+      line-height: 1.85;
+      color: var(--text-dark);
+    }
+    .about-text p { margin-bottom: 1.2rem; }
+
+    .about-image {
+      background: linear-gradient(135deg, var(--wood-medium), var(--wood-light));
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      min-height: 340px;
+    }
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .stat-card {
+      background: linear-gradient(135deg, var(--wood-medium), var(--wood-light));
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      color: var(--text-light);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.16);
+    }
+    .stat-number {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 3.2rem;
+      color: var(--accent-gold);
+      margin-bottom: 0.4rem;
+      letter-spacing: 2px;
+    }
+    .stat-label {
+      font-size: 1.05rem;
+      letter-spacing: 0.6px;
+      opacity: 0.95;
+    }
+    .stat-note {
+      margin-top: 0.6rem;
+      font-size: 0.95rem;
+      opacity: 0.85;
+    }
+
+    /* =========================================================
+       SERVICES SECTION
+       ========================================================= */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.2rem;
+      margin-top: 2.2rem;
+    }
+
+    .service-card {
+      background: var(--text-light);
+      padding: 2.6rem;
+      border-radius: 10px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.10);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 42px rgba(0,0,0,0.16);
+    }
+
+    .service-topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .badge {
+      font-family: "Bebas Neue", sans-serif;
+      letter-spacing: 2px;
+      font-size: 0.95rem;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(212,175,55,0.14);
+      border: 1px solid rgba(212,175,55,0.35);
+      color: var(--wood-dark);
+      white-space: nowrap;
+    }
+
+    .service-icon { font-size: 3.2rem; line-height: 1; }
+
+    .service-card h3 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 2rem;
+      color: var(--wood-dark);
+      letter-spacing: 2px;
+      margin-bottom: 0.4rem;
+    }
+
+    .service-card ul { list-style: none; margin-top: 1rem; }
+    .service-card li {
+      padding: 0.45rem 0;
+      padding-left: 1.4rem;
+      position: relative;
+      font-size: 1.02rem;
+      color: var(--text-dark);
+    }
+    .service-card li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent-gold);
+      font-weight: bold;
+    }
+
+    .services-mini-cta {
+      margin-top: 2.4rem;
+      padding: 1.6rem;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(93,64,55,0.12), rgba(212,175,55,0.10));
+      border: 1px solid rgba(93,64,55,0.18);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .services-mini-cta p {
+      font-size: 1.15rem;
+      line-height: 1.6;
+      max-width: 820px;
+    }
+
+    /* =========================================================
+       GALLERY SECTION
+       ========================================================= */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.6rem;
+      margin-top: 2.2rem;
+    }
+
+    .gallery-item {
+      aspect-ratio: 4/3;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.16);
+      background: linear-gradient(135deg, var(--sage), var(--wood-light));
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.25s ease;
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(212,175,55,0.25), rgba(44,24,16,0.25));
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      pointer-events: none;
+    }
+
+    .gallery-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 1rem 1rem 0.9rem;
+      color: var(--text-light);
+      background: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.7));
+      transform: translateY(18px);
+      opacity: 0;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    .gallery-caption .title {
+      font-family: "Bebas Neue", sans-serif;
+      letter-spacing: 2px;
+      font-size: 1.4rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .gallery-caption .details {
+      font-size: 0.98rem;
+      opacity: 0.95;
+      line-height: 1.35;
+    }
+
+    .gallery-item:hover img { transform: scale(1.06); }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-item:hover .gallery-caption { transform: translateY(0); opacity: 1; }
+
+    /* =========================================================
+       LIGHTBOX
+       ========================================================= */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.78);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      z-index: 2000;
+    }
+    .lightbox.open { display: flex; }
+
+    .lightbox-card {
+      width: min(1100px, 96vw);
+      background: var(--cream);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+    }
+
+    .lightbox-media {
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 380px;
+    }
+
+    .lightbox-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .lightbox-info {
+      padding: 1.6rem;
+      color: var(--text-dark);
+    }
+
+    .lightbox-info h3 {
+      font-family: "Bebas Neue", sans-serif;
+      letter-spacing: 3px;
+      font-size: 2.1rem;
+      color: var(--wood-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .lightbox-info p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .lightbox-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .lightbox-close {
+      margin-left: auto;
+      background: transparent;
+      border: 2px solid rgba(44,24,16,0.25);
+      padding: 0.6rem 0.9rem;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--wood-dark);
+    }
+    .lightbox-close:hover { border-color: rgba(212,175,55,0.6); }
+
+    /* =========================================================
+       CONTACT SECTION
+       ========================================================= */
+    .contact-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-top: 2.4rem;
+      align-items: start;
+    }
+
+    .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group { display: flex; flex-direction: column; }
+
+    .form-group label {
+      font-size: 1.05rem;
+      margin-bottom: 0.45rem;
+      color: var(--wood-dark);
+      font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      padding: 1rem;
+      border: 2px solid var(--wood-light);
+      border-radius: 10px;
+      font-family: "Crimson Pro", serif;
+      font-size: 1rem;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      background: var(--text-light);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--accent-gold);
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.12);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 150px; }
+
+    .form-help {
+      font-size: 0.98rem;
+      opacity: 0.85;
+      margin-top: 0.35rem;
+      line-height: 1.4;
+    }
+
+    .submit-button {
+      padding: 1.15rem;
+      background: var(--wood-dark);
+      color: var(--text-light);
+      border: none;
+      border-radius: 10px;
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+
+    .submit-button:hover {
+      background: var(--accent-gold);
+      color: var(--wood-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+    }
+
+    .form-status {
+      margin-top: 0.7rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      display: none;
+    }
+    .form-status.ok { color: #0a7a2d; }
+    .form-status.err { color: #b00020; }
+
+    .contact-info {
+      background: linear-gradient(135deg, var(--wood-dark), var(--wood-medium));
+      padding: 2.6rem;
+      border-radius: 14px;
+      color: var(--text-light);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    }
+
+    .contact-info h3 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 2.5rem;
+      color: var(--accent-gold);
+      margin-bottom: 1.6rem;
+      letter-spacing: 3px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.3rem;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    .info-icon {
+      font-size: 1.7rem;
+      margin-right: 1rem;
+      color: var(--accent-gold);
+      min-width: 30px;
+      line-height: 1.2;
+    }
+
+    .info-item a {
+      color: var(--cream);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .info-item a:hover { color: var(--accent-gold); }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+    footer {
+      background: var(--wood-dark);
+      color: var(--text-light);
+      text-align: center;
+      padding: 2.7rem 2rem;
+      margin-top: 4rem;
+    }
+
+    footer p { font-size: 1.05rem; letter-spacing: 1px; opacity: 0.95; }
+
+    /* =========================================================
+       MOBILE STICKY BAR
+       ========================================================= */
+    .mobile-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(44,24,16,0.96);
+      border-top: 1px solid rgba(212,175,55,0.22);
+      padding: 0.75rem 0.9rem;
+      display: none;
+      z-index: 1500;
+      backdrop-filter: blur(8px);
+    }
+
+    .mobile-bar .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+    }
+
+    .mobile-btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.9rem 0.9rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 1px;
+      font-size: 1.05rem;
+      border: 2px solid transparent;
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+    .mobile-btn:active { transform: translateY(1px); }
+
+    .mobile-btn.call {
+      background: var(--accent-gold);
+      color: var(--wood-dark);
+    }
+    .mobile-btn.quote {
+      background: transparent;
+      border-color: rgba(212,175,55,0.6);
+      color: var(--accent-gold);
+    }
+
+    /* =========================================================
+       SIMPLE REVEAL ANIMATION
+       ========================================================= */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* =========================================================
+       ACCESSIBILITY: REDUCED MOTION
+       ========================================================= */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; animation: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+      .hero { background-attachment: scroll; }
+    }
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+    @media (max-width: 980px) {
+      .nav-cta { display: none; }
+    }
+
+    @media (max-width: 860px) {
+      nav .container { padding: 0 1.25rem; }
+      .menu-btn { display: inline-flex; }
+
+      .nav-links {
+        position: absolute;
+        top: 86px;
+        left: 0;
+        right: 0;
+        background: rgba(44,24,16,0.98);
+        border-top: 1px solid rgba(212,175,55,0.22);
+        padding: 1rem 1.25rem 1.25rem;
+        flex-direction: column;
+        gap: 0.6rem;
+        display: none;
+      }
+
+      .nav-links.open { display: flex; }
+
+      .nav-links a {
+        width: 100%;
+        padding: 0.9rem 0.6rem;
+        border-radius: 10px;
+        background: rgba(245,241,232,0.06);
+      }
+
+      .hero h1 { font-size: 3rem; }
+      .hero .tagline { font-size: 1.25rem; }
+      h2 { font-size: 2.6rem; }
+      .about-content, .contact-content { grid-template-columns: 1fr; gap: 2rem; }
+      .stats { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .lightbox-card { grid-template-columns: 1fr; }
+      .lightbox-info { padding: 1.2rem; }
+      .mobile-bar { display: block; }
+      body { padding-bottom: 82px; }
+      .hero { min-height: calc(100vh - 86px - 82px); }
+
+      /* Slightly smaller logo on mobile */
+      nav .logo img { height: 46px; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- =========================================================
+       NAV: Logo + Call button + Menu + Links
+       Hostinger folder structure:
+       /public_html/index.html
+       /public_html/assets/images/logo.png
+       ========================================================= -->
+  <nav>
+    <div class="container">
+      <!-- LOGO (Image) -->
+      <a href="#home" class="logo" aria-label="Go to Home">
+        <img src="assets/images/logo.png" alt="Virk Carpentry & Construction Ltd logo">
+      </a>
+
+      <div class="nav-actions">
+        <a class="nav-cta" href="tel:+17809138054">Call: (780) 913-8054</a>
+        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="primaryNav">MENU</button>
+      </div>
+
+      <ul class="nav-links" id="primaryNav">
+        <li><a class="nav-link" href="#home">Home</a></li>
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#services">Services</a></li>
+        <li><a class="nav-link" href="#gallery">Gallery</a></li>
+        <li><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- =========================================================
+       HOME: HERO
+       ========================================================= -->
+  <main id="home">
+    <section class="hero">
+      <div class="hero-content reveal">
+        <h1>VIRK CARPENTRY &amp; CONSTRUCTION</h1>
+        <p class="tagline">Expert Finish Carpentry &amp; Interior Woodwork</p>
+        <p class="description">Precision craftsmanship for residential projects across the Edmonton area</p>
+
+        <div class="trust-lines">
+          <div class="trust-pill">Free estimates</div>
+          <div class="trust-pill">Clean, precise finishes</div>
+          <div class="trust-pill">Clear communication</div>
+          <div class="trust-pill">Serving Edmonton + nearby areas</div>
+        </div>
+
+        <div class="cta-buttons">
+          <a href="tel:+17809138054" class="cta-button">CALL NOW</a>
+          <a href="#contact" class="cta-button cta-button-secondary">GET A FREE QUOTE</a>
+          <a href="#services" class="cta-button cta-button-secondary">VIEW SERVICES</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       ABOUT
+       ========================================================= -->
+  <section id="about">
+    <h2>About Us</h2>
+
+    <p class="section-lead reveal">
+      Virk Carpentry &amp; Construction Ltd focuses on residential finish carpentry and interior woodwork.
+      You get clean cuts, tight miters, and a finished look that makes your home feel premium.
+    </p>
+
+    <div class="about-content reveal">
+      <div class="about-text">
+        <p>
+          We specialize in detail work that homeowners notice every day: baseboards, casing, doors, feature walls, and custom built-ins.
+          Our goal is simple: deliver sharp results, stay on schedule, and keep the jobsite clean.
+        </p>
+        <p>
+          Every project gets careful measuring, clean layouts, and consistent finishing. If you want that crisp, modern look,
+          we will help you pick the right profiles and keep everything aligned across the home.
+        </p>
+        <p>
+          Want an estimate fast? Send a few photos and basic measurements, and we can guide you on next steps.
+        </p>
+      </div>
+
+      <div class="about-image">
+        <img
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect fill='%235D4037' width='800' height='600'/%3E%3Cg fill='%23D4AF37' fill-opacity='0.10'%3E%3Cpath d='M90 110h170v380H90z'/%3E%3Cpath d='M310 160h200v330H310z'/%3E%3Cpath d='M560 110h160v380H560z'/%3E%3C/g%3E%3Ctext x='400' y='310' font-family='Arial' font-size='58' fill='%23D4AF37' text-anchor='middle'%3EVIRK%3C/text%3E%3Ctext x='400' y='355' font-family='Arial' font-size='22' fill='%23F5F1E8' text-anchor='middle'%3EFinish Carpentry%3C/text%3E%3C/svg%3E"
+          alt="Virk Carpentry"
+        />
+      </div>
+    </div>
+
+    <div class="stats reveal">
+      <div class="stat-card">
+        <div class="stat-number">Edmonton</div>
+        <div class="stat-label">Local residential work</div>
+        <div class="stat-note">Plus surrounding areas</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">Finish</div>
+        <div class="stat-label">Crisp trim and interiors</div>
+        <div class="stat-note">Details that elevate a home</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">Fast</div>
+        <div class="stat-label">Clear estimates</div>
+        <div class="stat-note">Photos help speed it up</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SERVICES
+       ========================================================= -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <p class="section-lead reveal">
+      Residential finish carpentry and interior woodwork designed to boost the look, feel, and value of your home.
+    </p>
+
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <div class="service-topline">
+          <div class="service-icon">🪚</div>
+          <span class="badge">Most requested</span>
+        </div>
+        <h3>Finish Carpentry</h3>
+        <ul>
+          <li>Baseboards and trim work</li>
+          <li>Crown moulding</li>
+          <li>Residential trim and finish work</li>
+          <li>Custom interior wood features</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-topline">
+          <div class="service-icon">🚪</div>
+          <span class="badge">Popular</span>
+        </div>
+        <h3>Doors &amp; Installation</h3>
+        <ul>
+          <li>Door installation</li>
+          <li>Door replacement</li>
+          <li>Custom door frames</li>
+          <li>Hardware installation</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-topline">
+          <div class="service-icon">🏠</div>
+          <span class="badge">Feature upgrade</span>
+        </div>
+        <h3>Wall Features</h3>
+        <ul>
+          <li>Wall panelling</li>
+          <li>Feature walls</li>
+          <li>Accent walls</li>
+          <li>Panel installation</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-topline">
+          <div class="service-icon">🔥</div>
+          <span class="badge">Custom</span>
+        </div>
+        <h3>Custom Woodwork</h3>
+        <ul>
+          <li>Fireplace mantels</li>
+          <li>Custom shelving</li>
+          <li>Built-in features</li>
+          <li>Decorative elements</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-topline">
+          <div class="service-icon">👔</div>
+          <span class="badge">Storage</span>
+        </div>
+        <h3>Closet Systems</h3>
+        <ul>
+          <li>Closet design</li>
+          <li>Closet installation</li>
+          <li>Custom storage solutions</li>
+          <li>Organization systems</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-topline">
+          <div class="service-icon">🛠️</div>
+          <span class="badge">Support</span>
+        </div>
+        <h3>Renovation Support</h3>
+        <ul>
+          <li>Interior renovation carpentry</li>
+          <li>Remodeling projects</li>
+          <li>Custom interior wood features</li>
+          <li>Finish work for renovations</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="services-mini-cta reveal">
+      <p><strong>Not sure what you need?</strong> Text or email a few photos and a quick description. We can guide you and give a clean estimate.</p>
+      <div class="cta-buttons" style="margin:0;">
+        <a href="tel:+17809138054" class="cta-button" style="padding:0.95rem 1.6rem;">CALL</a>
+        <a href="#contact" class="cta-button cta-button-secondary" style="padding:0.95rem 1.6rem;">GET QUOTE</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       GALLERY
+       ========================================================= -->
+  <section id="gallery">
+    <h2>Our Work</h2>
+    <p class="section-lead reveal">
+      Click a project to view details. Replace these images with real job photos as soon as you can.
+      Real photos will boost trust fast.
+    </p>
+
+    <div class="gallery-grid reveal">
+      <div class="gallery-item" role="button" tabindex="0"
+           data-title="Baseboards & Trim"
+           data-details="Example: MDF baseboards, 5-1/4 inch, tight joints and clean caulk lines."
+           data-src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 900'%3E%3Crect fill='%238D6E63' width='1200' height='900'/%3E%3Cg fill='%235D4037'%3E%3Crect x='120' y='160' width='960' height='30'/%3E%3Crect x='120' y='710' width='960' height='30'/%3E%3C/g%3E%3Ctext x='600' y='480' font-family='Arial' font-size='70' fill='%23F5F1E8' text-anchor='middle'%3EBaseboards%3C/text%3E%3C/svg%3E">
+        <img alt="Baseboards and Trim" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%238D6E63' width='400' height='300'/%3E%3Cg fill='%235D4037'%3E%3Crect x='50' y='50' width='300' height='10'/%3E%3Crect x='50' y='240' width='300' height='10'/%3E%3C/g%3E%3Ctext x='200' y='160' font-family='Arial' font-size='24' fill='%23F5F1E8' text-anchor='middle'%3EBaseboards%3C/text%3E%3C/svg%3E">
+        <div class="gallery-overlay"></div>
+        <div class="gallery-caption">
+          <div class="title">Baseboards &amp; Trim</div>
+          <div class="details">MDF baseboards, clean joints, crisp lines</div>
+        </div>
+      </div>
+
+      <div class="gallery-item" role="button" tabindex="0"
+           data-title="Crown Moulding"
+           data-details="Example: smooth crown install with consistent reveals and clean corners."
+           data-src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 900'%3E%3Crect fill='%235D4037' width='1200' height='900'/%3E%3Cpath fill='%23D4AF37' d='M120 90 Q600 140 1080 90 L1080 150 Q600 210 120 150 Z'/%3E%3Ctext x='600' y='500' font-family='Arial' font-size='70' fill='%23F5F1E8' text-anchor='middle'%3ECrown%20Moulding%3C/text%3E%3C/svg%3E">
+        <img alt="Crown Moulding" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%235D4037' width='400' height='300'/%3E%3Cpath fill='%23D4AF37' d='M50 30 Q200 50 350 30 L350 50 Q200 70 50 50 Z'/%3E%3Ctext x='200' y='160' font-family='Arial' font-size='24' fill='%23F5F1E8' text-anchor='middle'%3ECrown Moulding%3C/text%3E%3C/svg%3E">
+        <div class="gallery-overlay"></div>
+        <div class="gallery-caption">
+          <div class="title">Crown Moulding</div>
+          <div class="details">Clean corners, even reveals</div>
+        </div>
+      </div>
+
+      <div class="gallery-item" role="button" tabindex="0"
+           data-title="Door Installation"
+           data-details="Example: plumb and level install with smooth swing and clean casing lines."
+           data-src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 900'%3E%3Crect fill='%238B9D83' width='1200' height='900'/%3E%3Crect fill='%235D4037' x='360' y='110' width='480' height='700' rx='12'/%3E%3Ccircle fill='%23D4AF37' cx='750' cy='480' r='18'/%3E%3Ctext x='600' y='860' font-family='Arial' font-size='55' fill='%23F5F1E8' text-anchor='middle'%3EDoor%20Installation%3C/text%3E%3C/svg%3E">
+        <img alt="Door Installation" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%238B9D83' width='400' height='300'/%3E%3Crect fill='%235D4037' x='120' y='30' width='160' height='240' rx='5'/%3E%3Ccircle fill='%23D4AF37' cx='250' cy='150' r='8'/%3E%3Ctext x='200' y='290' font-family='Arial' font-size='18' fill='%23F5F1E8' text-anchor='middle'%3EDoor Installation%3C/text%3E%3C/svg%3E">
+        <div class="gallery-overlay"></div>
+        <div class="gallery-caption">
+          <div class="title">Door Installation</div>
+          <div class="details">Plumb, level, clean casing</div>
+        </div>
+      </div>
+
+      <div class="gallery-item" role="button" tabindex="0"
+           data-title="Wall Panelling"
+           data-details="Example: straight layouts, consistent spacing, and clean paint-ready finish."
+           data-src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 900'%3E%3Crect fill='%23F5F1E8' width='1200' height='900'/%3E%3Cg fill='%235D4037'%3E%3Crect x='60' y='60' width='240' height='780'/%3E%3Crect x='360' y='60' width='240' height='780'/%3E%3Crect x='660' y='60' width='240' height='780'/%3E%3Crect x='960' y='60' width='180' height='780'/%3E%3C/g%3E%3Ctext x='600' y='860' font-family='Arial' font-size='55' fill='%235D4037' text-anchor='middle'%3EWall%20Panelling%3C/text%3E%3C/svg%3E">
+        <img alt="Wall Panelling" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23F5F1E8' width='400' height='300'/%3E%3Cg fill='%235D4037'%3E%3Crect x='20' y='20' width='80' height='260'/%3E%3Crect x='120' y='20' width='80' height='260'/%3E%3Crect x='220' y='20' width='80' height='260'/%3E%3Crect x='320' y='20' width='60' height='260'/%3E%3C/g%3E%3Ctext x='200' y='290' font-family='Arial' font-size='18' fill='%235D4037' text-anchor='middle'%3EWall Panelling%3C/text%3E%3C/svg%3E">
+        <div class="gallery-overlay"></div>
+        <div class="gallery-caption">
+          <div class="title">Wall Panelling</div>
+          <div class="details">Consistent spacing, paint ready</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       CONTACT
+       ========================================================= -->
+  <section id="contact">
+    <h2>Get In Touch</h2>
+    <p class="section-lead reveal">
+      Tell us what you need and we will respond as soon as possible. If you want a faster estimate, include photos.
+    </p>
+
+    <div class="contact-content reveal">
+      <!-- IMPORTANT:
+           Replace the action URL with your real Formspree endpoint.
+           Example: https://formspree.io/f/abcdwxyz
+      -->
+      <form class="contact-form" id="quoteForm" method="POST" action="https://formspree.io/f/REPLACE_ME" enctype="multipart/form-data">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input id="name" name="name" type="text" required placeholder="John Doe" />
+          </div>
+          <div class="form-group">
+            <label for="contactMethod">Preferred Contact</label>
+            <select id="contactMethod" name="preferred_contact" required>
+              <option value="" selected disabled>Select one</option>
+              <option value="Call">Call</option>
+              <option value="Text">Text</option>
+              <option value="Email">Email</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="email" required placeholder="john@example.com" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel" placeholder="+1 (780) 123-4567" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="neighborhood">Neighborhood / Area</label>
+            <input id="neighborhood" name="neighborhood" type="text" placeholder="Windermere, Terwillegar, Beaumont..." />
+          </div>
+          <div class="form-group">
+            <label for="timeline">Timeline</label>
+            <select id="timeline" name="timeline">
+              <option value="" selected disabled>When do you want it done?</option>
+              <option value="ASAP">ASAP</option>
+              <option value="1-2 weeks">1 to 2 weeks</option>
+              <option value="2-4 weeks">2 to 4 weeks</option>
+              <option value="1-3 months">1 to 3 months</option>
+              <option value="Just exploring">Just exploring</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="details">Project Details</label>
+          <textarea id="details" name="project_details" required placeholder="What do you want done? Include approx measurements if you have them."></textarea>
+          <div class="form-help">Tip: add material preference (MDF, pine, oak), and which rooms.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="photos">Optional Photos</label>
+          <input id="photos" name="photos" type="file" accept="image/*" multiple />
+          <div class="form-help">If your form service does not support file uploads, email photos instead.</div>
+        </div>
+
+        <input type="hidden" name="_subject" value="New Quote Request: Virk Carpentry Website" />
+
+        <button type="submit" class="submit-button">SEND MESSAGE</button>
+        <div class="form-status" id="formStatus"></div>
+      </form>
+
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+
+        <div class="info-item">
+          <span class="info-icon">📍</span>
+          <span>7341 Armour Cres SW<br />Edmonton, Alberta</span>
+        </div>
+
+        <div class="info-item">
+          <span class="info-icon">📞</span>
+          <a href="tel:+17809138054">+1 (780) 913-8054</a>
+        </div>
+
+        <div class="info-item">
+          <span class="info-icon">✉️</span>
+          <a href="mailto:virkcarpentry@gmail.com">virkcarpentry@gmail.com</a>
+        </div>
+
+        <div class="info-item">
+          <span class="info-icon">🏘️</span>
+          <span>Proudly serving the Edmonton area and surrounding communities</span>
+        </div>
+
+        <div class="info-item" style="margin-top:1.2rem;">
+          <span class="info-icon">✅</span>
+          <span><strong>Fast estimates:</strong> send photos + quick details for a cleaner quote.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer>
+    <p>&copy; 2026 Virk Carpentry &amp; Construction Ltd. All Rights Reserved. Finish Carpentry &amp; Interior Woodwork.</p>
+  </footer>
+
+  <!-- =========================================================
+       MOBILE STICKY BAR
+       ========================================================= -->
+  <div class="mobile-bar" aria-label="Quick actions">
+    <div class="row">
+      <a class="mobile-btn call" href="tel:+17809138054">Call</a>
+      <a class="mobile-btn quote" href="#contact">Get Quote</a>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       LIGHTBOX
+       ========================================================= -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-card" role="dialog" aria-modal="true" aria-label="Project preview">
+      <div class="lightbox-media">
+        <img id="lightboxImg" alt="Project image" src="" />
+      </div>
+      <div class="lightbox-info">
+        <h3 id="lightboxTitle"></h3>
+        <p id="lightboxDetails"></p>
+        <div class="lightbox-actions">
+          <a class="cta-button" href="tel:+17809138054" style="padding:0.85rem 1.2rem; font-size:1rem; letter-spacing:1px;">Call Now</a>
+          <a class="cta-button cta-button-secondary" href="#contact" style="padding:0.85rem 1.2rem; font-size:1rem; letter-spacing:1px;">Get Quote</a>
+          <button class="lightbox-close" id="lightboxClose" type="button">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       SCRIPTS
+       ========================================================= -->
+  <script>
+    // =========================================================
+    // NAV: Mobile menu
+    // =========================================================
+    const menuBtn = document.getElementById("menuBtn");
+    const primaryNav = document.getElementById("primaryNav");
+
+    function setMenu(open) {
+      primaryNav.classList.toggle("open", open);
+      menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+
+    menuBtn.addEventListener("click", () => {
+      const isOpen = primaryNav.classList.contains("open");
+      setMenu(!isOpen);
+    });
+
+    // Close menu on link click (mobile)
+    document.querySelectorAll(".nav-link").forEach(link => {
+      link.addEventListener("click", () => setMenu(false));
+    });
+
+    // =========================================================
+    // NAV: Active link by hash
+    // =========================================================
+    function setActiveNav(hash) {
+      const target = (hash || "#home").replace("#", "");
+      document.querySelectorAll(".nav-link").forEach(a => {
+        const isActive = a.getAttribute("href") === "#" + target;
+        a.classList.toggle("active", isActive);
+      });
+    }
+
+    window.addEventListener("hashchange", () => setActiveNav(location.hash));
+    setActiveNav(location.hash);
+
+    // =========================================================
+    // REVEAL: lightweight intersection observer
+    // =========================================================
+    const revealEls = document.querySelectorAll(".reveal");
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add("visible");
+      });
+    }, { threshold: 0.12 });
+
+    revealEls.forEach(el => revealObs.observe(el));
+
+    // =========================================================
+    // GALLERY: Lightbox
+    // =========================================================
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxTitle = document.getElementById("lightboxTitle");
+    const lightboxDetails = document.getElementById("lightboxDetails");
+    const lightboxClose = document.getElementById("lightboxClose");
+
+    function openLightbox(item) {
+      const src = item.getAttribute("data-src");
+      const title = item.getAttribute("data-title") || "Project";
+      const details = item.getAttribute("data-details") || "";
+
+      lightboxImg.src = src;
+      lightboxTitle.textContent = title;
+      lightboxDetails.textContent = details;
+
+      lightbox.classList.add("open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      lightboxClose.focus();
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      lightboxImg.src = "";
+    }
+
+    document.querySelectorAll(".gallery-item").forEach(item => {
+      item.addEventListener("click", () => openLightbox(item));
+      item.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          openLightbox(item);
+        }
+      });
+    });
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    lightboxClose.addEventListener("click", closeLightbox);
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && lightbox.classList.contains("open")) closeLightbox();
+    });
+
+    // =========================================================
+    // FORM: Real submission (Formspree or similar)
+    // =========================================================
+    const form = document.getElementById("quoteForm");
+    const statusEl = document.getElementById("formStatus");
+
+    form.addEventListener("submit", async (e) => {
+      const action = form.getAttribute("action") || "";
+      if (action.includes("REPLACE_ME")) {
+        e.preventDefault();
+        statusEl.style.display = "block";
+        statusEl.className = "form-status err";
+        statusEl.textContent = "Form is not connected yet. Replace the form action URL with your real form endpoint.";
+        return;
+      }
+
+      e.preventDefault();
+
+      statusEl.style.display = "block";
+      statusEl.className = "form-status";
+      statusEl.textContent = "Sending...";
+
+      try {
+        const formData = new FormData(form);
+        const res = await fetch(action, {
+          method: "POST",
+          body: formData,
+          headers: { "Accept": "application/json" }
+        });
+
+        if (res.ok) {
+          statusEl.className = "form-status ok";
+          statusEl.textContent = "Thanks. Message sent. We will contact you soon.";
+          form.reset();
+        } else {
+          statusEl.className = "form-status err";
+          statusEl.textContent = "Something went wrong. Please call or email us instead.";
+        }
+      } catch (err) {
+        statusEl.className = "form-status err";
+        statusEl.textContent = "Network error. Please call or email us instead.";
+      }
+    });
+
+    // Default hash
+    if (!location.hash) location.hash = "#home";
+  </script>
+</body>
+</html>
