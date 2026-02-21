@@ -172,7 +172,7 @@
       min-height: calc(100vh - 86px);
       background:
         linear-gradient(135deg, rgba(44, 24, 16, 0.55) 0%, rgba(93, 64, 55, 0.55) 100%),
-        url("assets/images/hero.png");
+        url("assets/images/hero.jpeg");
       background-size: cover;
       background-position: 60% center;
       background-repeat: no-repeat;
@@ -522,17 +522,17 @@
     }
 
     .gallery-caption {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      padding: 1rem 1rem 0.9rem;
-      color: var(--text-light);
-      background: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.7));
-      transform: translateY(18px);
-      opacity: 0;
-      transition: transform 0.25s ease, opacity 0.25s ease;
-    }
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1rem 1rem 0.9rem;
+  color: var(--text-light);
+  background: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.7));
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 0.25s ease;
+}
 
     .gallery-caption .title {
       font-family: "Bebas Neue", sans-serif;
@@ -1192,62 +1192,67 @@
        GALLERY
   ========================= -->
   <section id="gallery">
-    <h2>Our Work</h2>
-    <p class="section-lead reveal">
-      Click a project to view details. Replace these images with real job photos as soon as you can.
-      Real photos will boost trust fast.
-    </p>
+  <h2>Our Work</h2>
+  <p class="section-lead reveal">
+    Click a project to view details. Real photos help homeowners visualize the quality and finish.
+  </p>
 
-    <div class="gallery-grid reveal">
-      <div class="gallery-item" role="button" tabindex="0"
-           data-title="Baseboards & Trim"
-           data-details="Example: MDF baseboards, 5-1/4 inch, tight joints and clean caulk lines."
-           data-src="assets/images/baseboard.png">
-        <img alt="Baseboards and Trim" src="assets/images/baseboard.png">
-        <div class="gallery-overlay"></div>
-        <div class="gallery-caption">
-          <div class="title">Baseboards &amp; Trim</div>
-          <div class="details">MDF baseboards, clean joints, crisp lines</div>
-        </div>
-      </div>
+  <div class="gallery-grid reveal">
 
-      <div class="gallery-item" role="button" tabindex="0"
-           data-title="Crown Moulding"
-           data-details="Example: smooth crown install with consistent reveals and clean corners."
-           data-src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 900'%3E%3Crect fill='%235D4037' width='1200' height='900'/%3E%3Cpath fill='%23D4AF37' d='M120 90 Q600 140 1080 90 L1080 150 Q600 210 120 150 Z'/%3E%3Ctext x='600' y='500' font-family='Arial' font-size='70' fill='%23F5F1E8' text-anchor='middle'%3ECrown%20Moulding%3C/text%3E%3C/svg%3E">
-        <img alt="Crown Moulding" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%235D4037' width='400' height='300'/%3E%3Cpath fill='%23D4AF37' d='M50 30 Q200 50 350 30 L350 50 Q200 70 50 50 Z'/%3E%3Ctext x='200' y='160' font-family='Arial' font-size='24' fill='%23F5F1E8' text-anchor='middle'%3ECrown Moulding%3C/text%3E%3C/svg%3E">
-        <div class="gallery-overlay"></div>
-        <div class="gallery-caption">
-          <div class="title">Crown Moulding</div>
-          <div class="details">Clean corners, even reveals</div>
-        </div>
-      </div>
-
-      <div class="gallery-item" role="button" tabindex="0"
-           data-title="Door Installation"
-           data-details="Example: plumb and level install with smooth swing and clean casing lines."
-           data-src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 900'%3E%3Crect fill='%238B9D83' width='1200' height='900'/%3E%3Crect fill='%235D4037' x='360' y='110' width='480' height='700' rx='12'/%3E%3Ccircle fill='%23D4AF37' cx='750' cy='480' r='18'/%3E%3Ctext x='600' y='860' font-family='Arial' font-size='55' fill='%23F5F1E8' text-anchor='middle'%3EDoor%20Installation%3C/text%3E%3C/svg%3E">
-        <img alt="Door Installation" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%238B9D83' width='400' height='300'/%3E%3Crect fill='%235D4037' x='120' y='30' width='160' height='240' rx='5'/%3E%3Ccircle fill='%23D4AF37' cx='250' cy='150' r='8'/%3E%3Ctext x='200' y='290' font-family='Arial' font-size='18' fill='%23F5F1E8' text-anchor='middle'%3EDoor Installation%3C/text%3E%3C/svg%3E">
-        <div class="gallery-overlay"></div>
-        <div class="gallery-caption">
-          <div class="title">Door Installation</div>
-          <div class="details">Plumb, level, clean casing</div>
-        </div>
-      </div>
-
-      <div class="gallery-item" role="button" tabindex="0"
-           data-title="Wall Panelling"
-           data-details="Example: straight layouts, consistent spacing, and clean paint-ready finish."
-           data-src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 900'%3E%3Crect fill='%23F5F1E8' width='1200' height='900'/%3E%3Cg fill='%235D4037'%3E%3Crect x='60' y='60' width='240' height='780'/%3E%3Crect x='360' y='60' width='240' height='780'/%3E%3Crect x='660' y='60' width='240' height='780'/%3E%3Crect x='960' y='60' width='180' height='780'/%3E%3C/g%3E%3Ctext x='600' y='860' font-family='Arial' font-size='55' fill='%235D4037' text-anchor='middle'%3EWall%20Panelling%3C/text%3E%3C/svg%3E">
-        <img alt="Wall Panelling" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23F5F1E8' width='400' height='300'/%3E%3Cg fill='%235D4037'%3E%3Crect x='20' y='20' width='80' height='260'/%3E%3Crect x='120' y='20' width='80' height='260'/%3E%3Crect x='220' y='20' width='80' height='260'/%3E%3Crect x='320' y='20' width='60' height='260'/%3E%3C/g%3E%3Ctext x='200' y='290' font-family='Arial' font-size='18' fill='%235D4037' text-anchor='middle'%3EWall Panelling%3C/text%3E%3C/svg%3E">
-        <div class="gallery-overlay"></div>
-        <div class="gallery-caption">
-          <div class="title">Wall Panelling</div>
-          <div class="details">Consistent spacing, paint ready</div>
-        </div>
+    <!-- Baseboards -->
+    <div class="gallery-item" role="button" tabindex="0"
+         data-title="Baseboards & Trim"
+         data-details="MDF baseboards with tight joints and clean caulk lines."
+         data-src="assets/images/baseboard.png">
+      <img alt="Baseboards and Trim" src="assets/images/baseboard.png">
+      <div class="gallery-overlay"></div>
+      <div class="gallery-caption">
+        <div class="title">Baseboards & Trim</div>
+        <div class="details">Clean joints and crisp finish</div>
       </div>
     </div>
-  </section>
+
+    <!-- Crown Moulding -->
+    <div class="gallery-item" role="button" tabindex="0"
+         data-title="Crown Moulding"
+         data-details="Smooth crown install with consistent reveals and sharp corners."
+         data-src="assets/images/crownmoulding.png">
+      <img alt="Crown Moulding" src="assets/images/crownmoulding.png">
+      <div class="gallery-overlay"></div>
+      <div class="gallery-caption">
+        <div class="title">Crown Moulding</div>
+        <div class="details">Clean corners and premium finish</div>
+      </div>
+    </div>
+
+    <!-- Door Installation -->
+    <div class="gallery-item" role="button" tabindex="0"
+         data-title="Door Installation"
+         data-details="Plumb and level door install with clean casing and smooth swing."
+         data-src="assets/images/doorinstallation.jpeg">
+      <img alt="Door Installation" src="assets/images/doorinstallation.jpeg">
+      <div class="gallery-overlay"></div>
+      <div class="gallery-caption">
+        <div class="title">Door Installation</div>
+        <div class="details">Level install and clean casing lines</div>
+      </div>
+    </div>
+
+    <!-- Wall Panelling -->
+    <div class="gallery-item" role="button" tabindex="0"
+         data-title="Wall Panelling"
+         data-details="Straight layouts with consistent spacing and paint-ready finish."
+         data-src="assets/images/wallpanelling.jpeg">
+      <img alt="Wall Panelling" src="assets/images/wallpanelling.jpeg">
+      <div class="gallery-overlay"></div>
+      <div class="gallery-caption">
+        <div class="title">Wall Panelling</div>
+        <div class="details">Consistent spacing and modern look</div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
   <!-- =========================
        CONTACT (No form)
