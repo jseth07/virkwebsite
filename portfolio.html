@@ -33,47 +33,81 @@
   </nav>
 
   <section>
-    <h2>Portfolio</h2>
-    <p class="section-lead">
-      Explore recent finish carpentry and interior woodwork projects.
-    </p>
+  <h2>Portfolio</h2>
+  <p class="section-lead">
+    Explore recent finish carpentry and interior woodwork projects.
+  </p>
 
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="assets/portfolioimages/baseboard.png" alt="Baseboards">
-      </div>
+  <div class="gallery-grid">
 
-      <div class="gallery-item">
-        <img src="assets/portfolioimages/crownmoulding.png" alt="Crown Moulding">
-      </div>
+    <div class="gallery-item" data-src="assets/portfolioimages/baseboard.png">
+      <img src="assets/portfolioimages/baseboard.png" alt="Baseboards">
+    </div>
 
-      <div class="gallery-item">
-        <img src="assets/portfolioimages/doorinstallation.jpeg" alt="Door Installation">
-      </div>
+    <div class="gallery-item" data-src="assets/portfolioimages/crownmoulding.png">
+      <img src="assets/portfolioimages/crownmoulding.png" alt="Crown Moulding">
+    </div>
 
-      <div class="gallery-item">
-        <img src="assets/portfolioimages/wallpanelling.jpeg" alt="Wall Panelling">
+    <div class="gallery-item" data-src="assets/portfolioimages/doorinstallation.jpeg">
+      <img src="assets/portfolioimages/doorinstallation.jpeg" alt="Door Installation">
+    </div>
+
+    <div class="gallery-item" data-src="assets/portfolioimages/wallpanelling.jpeg">
+      <img src="assets/portfolioimages/wallpanelling.jpeg" alt="Wall Panelling">
+    </div>
+
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox-card" role="dialog" aria-modal="true" aria-label="Project preview">
+    <div class="lightbox-media">
+      <img id="lightboxImg" alt="Project image" src="">
+    </div>
+    <div class="lightbox-info">
+      <div class="lightbox-actions">
+        <button class="lightbox-close" id="lightboxClose" type="button">Close</button>
       </div>
     </div>
-  </section>
+  </div>
+</div>
 
-  <script>
-    const menuBtn = document.getElementById("menuBtn");
-    const primaryNav = document.getElementById("primaryNav");
+<script>
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightboxImg");
+  const lightboxClose = document.getElementById("lightboxClose");
 
-    function setMenu(open) {
-      primaryNav.classList.toggle("open", open);
-      menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
-    }
+  function openLightbox(item) {
+    const src = item.getAttribute("data-src");
+    lightboxImg.src = src;
 
-    menuBtn.addEventListener("click", () => {
-      const isOpen = primaryNav.classList.contains("open");
-      setMenu(!isOpen);
-    });
+    lightbox.classList.add("open");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    lightboxClose.focus();
+  }
 
-    document.querySelectorAll(".nav-link").forEach(link => {
-      link.addEventListener("click", () => setMenu(false));
-    });
-  </script>
+  function closeLightbox() {
+    lightbox.classList.remove("open");
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    lightboxImg.src = "";
+  }
+
+  document.querySelectorAll(".gallery-item").forEach(item => {
+    item.addEventListener("click", () => openLightbox(item));
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  lightboxClose.addEventListener("click", closeLightbox);
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lightbox.classList.contains("open")) closeLightbox();
+  });
+</script>
+
 </body>
 </html>
