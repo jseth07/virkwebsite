@@ -1,159 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio | Virk Carpentry & Construction Ltd</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Virk Carpentry & Construction Ltd</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --wood-dark:#2C1810;
-  --wood-medium:#5D4037;
-  --wood-light:#8D6E63;
-  --accent-gold:#D4AF37;
-  --cream:#F5F1E8;
-  --sage:#8B9D83;
-  --text-dark:#1A1A1A;
-  --text-light:#FFFFFF;
-}
-
-*{margin:0;padding:0;box-sizing:border-box;}
-
-body{
-  font-family:"Crimson Pro",serif;
-  background:var(--cream);
-  padding-top:86px;
-}
-
-/* NAV */
-nav{
-  position:fixed;
-  top:0;
-  width:100%;
-  background:var(--wood-dark);
-  padding:1.1rem 0;
-  z-index:1000;
-}
-
-nav .container{
-  max-width:1400px;
-  margin:0 auto;
-  padding:0 2rem;
-  display:flex;
-  align-items:center;
-  gap:1.25rem;
-}
-
-.logo{
-  font-family:"Bebas Neue";
-  color:var(--accent-gold);
-  font-size:3rem;
-  text-decoration:none;
-}
-
-.nav-links{
-  display:flex;
-  gap:2rem;
-  list-style:none;
-  margin-left:auto;
-}
-
-.nav-links a{
-  color:white;
-  text-decoration:none;
-}
-
-/* PAGE */
-section{
-  padding:6rem 2rem;
-  max-width:1400px;
-  margin:0 auto;
-}
-
-h2{
-  font-family:"Bebas Neue";
-  font-size:4rem;
-  letter-spacing:4px;
-  margin-bottom:1rem;
-}
-
-.section-lead{
-  margin-bottom:2rem;
-  font-size:1.2rem;
-}
-
-/* GALLERY */
-.gallery-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:1.6rem;
-}
-
-.gallery-item{
-  aspect-ratio:4/3;
-  border-radius:12px;
-  overflow:hidden;
-  box-shadow:0 8px 22px rgba(0,0,0,0.16);
-}
-
-.gallery-item img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:transform .25s ease;
-}
-
-.gallery-item:hover img{
-  transform:scale(1.06);
-}
-</style>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
 
-<body>
+<body class="page-portfolio">
+  <nav>
+    <div class="container">
+      <a href="index.html#home" class="logo" aria-label="Virk Carpentry Home">
+        <span class="company-name">VC</span>
+      </a>
 
-<nav>
-<div class="container">
-<a href="index.html" class="logo">VC</a>
+      <ul class="nav-links" id="primaryNav">
+        <li><a class="nav-link" href="index.html#home">Home</a></li>
+        <li><a class="nav-link" href="index.html#about">About</a></li>
+        <li><a class="nav-link" href="index.html#services">Services</a></li>
+        <li><a class="nav-link" href="index.html#gallery">Gallery</a></li>
+        <li><a class="nav-link active" href="portfolio.html">Portfolio</a></li>
+        <li><a class="nav-link" href="index.html#contact">Contact</a></li>
+      </ul>
 
-<ul class="nav-links">
-<li><a href="index.html#home">Home</a></li>
-<li><a href="index.html#about">About</a></li>
-<li><a href="index.html#services">Services</a></li>
-<li><a href="index.html#gallery">Gallery</a></li>
-<li><a href="portfolio.html">Portfolio</a></li>
-<li><a href="index.html#contact">Contact</a></li>
-</ul>
-</div>
-</nav>
+      <div class="nav-actions">
+        <a class="nav-cta" href="tel:+17809138054">Call: (780) 913-8054</a>
+        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="primaryNav">MENU</button>
+      </div>
+    </div>
+  </nav>
 
-<section>
-<h2>Portfolio</h2>
-<p class="section-lead">
-Explore recent finish carpentry and interior woodwork projects.
-</p>
+  <section>
+    <h2>Portfolio</h2>
+    <p class="section-lead">
+      Explore recent finish carpentry and interior woodwork projects.
+    </p>
 
-<div class="gallery-grid">
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="assets/portfolioimages/baseboard.png" alt="Baseboards">
+      </div>
 
-<div class="gallery-item">
-<img src="assets/portfolioimages/baseboard.png" alt="Baseboards">
-</div>
+      <div class="gallery-item">
+        <img src="assets/portfolioimages/crownmoulding.png" alt="Crown Moulding">
+      </div>
 
-<div class="gallery-item">
-<img src="assets/portfolioimages/crownmoulding.png" alt="Crown Moulding">
-</div>
+      <div class="gallery-item">
+        <img src="assets/portfolioimages/doorinstallation.jpeg" alt="Door Installation">
+      </div>
 
-<div class="gallery-item">
-<img src="assets/portfolioimages/doorinstallation.jpeg" alt="Door Installation">
-</div>
+      <div class="gallery-item">
+        <img src="assets/portfolioimages/wallpanelling.jpeg" alt="Wall Panelling">
+      </div>
+    </div>
+  </section>
 
-<div class="gallery-item">
-<img src="assets/portfolioimages/wallpanelling.jpeg" alt="Wall Panelling">
-</div>
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const primaryNav = document.getElementById("primaryNav");
 
-</div>
-</section>
+    function setMenu(open) {
+      primaryNav.classList.toggle("open", open);
+      menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    }
 
+    menuBtn.addEventListener("click", () => {
+      const isOpen = primaryNav.classList.contains("open");
+      setMenu(!isOpen);
+    });
+
+    document.querySelectorAll(".nav-link").forEach(link => {
+      link.addEventListener("click", () => setMenu(false));
+    });
+  </script>
 </body>
 </html>
