@@ -988,3 +988,39 @@ footer p { font-size: 1.05rem; letter-spacing: 1px; opacity: 0.95; }
 .page-portfolio .gallery-caption {
   display: none;
 }
+/* Portfolio lightbox fix */
+.page-portfolio .lightbox-card {
+  grid-template-columns: 1fr;
+  width: min(1100px, 96vw);
+}
+
+.page-portfolio .lightbox-info {
+  display: none;
+}
+
+.page-portfolio .lightbox-media {
+  min-height: 0;
+}
+
+.page-portfolio .lightbox-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 5;
+  background: rgba(245, 241, 232, 0.95);
+  border-color: rgba(44, 24, 16, 0.25);
+}
+/* Portfolio lightbox fix */
+.page-portfolio .lightbox-card {
+  grid-template-columns: 1fr;
+  width: min(1100px, 96vw);
+}
+
+.page-portfolio .lightbox-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 5;
+  background: rgba(245, 241, 232, 0.95);
+  border-color: rgba(44, 24, 16, 0.25);
+}

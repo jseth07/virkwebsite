@@ -10,6 +10,8 @@
 </head>
 
 <body class="page-portfolio">
+
+  <!-- NAV -->
   <nav>
     <div class="container">
       <a href="index.html#home" class="logo" aria-label="Virk Carpentry Home">
@@ -32,82 +34,98 @@
     </div>
   </nav>
 
+  <!-- PAGE -->
   <section>
-  <h2>Portfolio</h2>
-  <p class="section-lead">
-    Explore recent finish carpentry and interior woodwork projects.
-  </p>
+    <h2>Portfolio</h2>
+    <p class="section-lead">
+      Explore recent finish carpentry and interior woodwork projects.
+    </p>
 
-  <div class="gallery-grid">
+    <div class="gallery-grid">
 
-    <div class="gallery-item" data-src="assets/portfolioimages/baseboard.png">
-      <img src="assets/portfolioimages/baseboard.png" alt="Baseboards">
+      <!-- NEW IMAGES -->
+      <div class="gallery-item" role="button" tabindex="0" data-src="assets/portfolioimages/1.jpeg"><img src="assets/portfolioimages/1.jpeg"><div class="gallery-overlay"></div></div>
+      <div class="gallery-item" role="button" tabindex="0" data-src="assets/portfolioimages/2.jpeg"><img src="assets/portfolioimages/2.jpeg"><div class="gallery-overlay"></div></div>
+      <div class="gallery-item" role="button" tabindex="0" data-src="assets/portfolioimages/3.jpeg"><img src="assets/portfolioimages/3.jpeg"><div class="gallery-overlay"></div></div>
+      <div class="gallery-item" role="button" tabindex="0" data-src="assets/portfolioimages/5.jpeg"><img src="assets/portfolioimages/5.jpeg"><div class="gallery-overlay"></div></div>
+      <div class="gallery-item" role="button" tabindex="0" data-src="assets/portfolioimages/6.jpeg"><img src="assets/portfolioimages/6.jpeg"><div class="gallery-overlay"></div></div>
+      <div class="gallery-item" role="button" tabindex="0" data-src="assets/portfolioimages/7.jpeg"><img src="assets/portfolioimages/7.jpeg"><div class="gallery-overlay"></div></div>
+      <div class="gallery-item" role="button" tabindex="0" data-src="assets/portfolioimages/8.jpeg"><img src="assets/portfolioimages/8.jpeg"><div class="gallery-overlay"></div></div>
+      <div class="gallery-item" role="button" tabindex="0" data-src="assets/portfolioimages/10.jpeg"><img src="assets/portfolioimages/10.jpeg"><div class="gallery-overlay"></div></div>
+      <div class="gallery-item" role="button" tabindex="0" data-src="assets/portfolioimages/11.jpeg"><img src="assets/portfolioimages/11.jpeg"><div class="gallery-overlay"></div></div>
+      <div class="gallery-item" role="button" tabindex="0" data-src="assets/portfolioimages/12.jpeg"><img src="assets/portfolioimages/12.jpeg"><div class="gallery-overlay"></div></div>
+      <div class="gallery-item" role="button" tabindex="0" data-src="assets/portfolioimages/13.jpeg"><img src="assets/portfolioimages/13.jpeg"><div class="gallery-overlay"></div></div>
+      <div class="gallery-item" role="button" tabindex="0" data-src="assets/portfolioimages/14.jpeg"><img src="assets/portfolioimages/14.jpeg"><div class="gallery-overlay"></div></div>
+      <div class="gallery-item" role="button" tabindex="0" data-src="assets/portfolioimages/15.jpeg"><img src="assets/portfolioimages/15.jpeg"><div class="gallery-overlay"></div></div>
+
+      <!-- OLD IMAGES -->
+      <div class="gallery-item" role="button" tabindex="0" data-src="assets/portfolioimages/baseboard.png"><img src="assets/portfolioimages/baseboard.png"><div class="gallery-overlay"></div></div>
+      <div class="gallery-item" role="button" tabindex="0" data-src="assets/portfolioimages/crownmoulding.png"><img src="assets/portfolioimages/crownmoulding.png"><div class="gallery-overlay"></div></div>
+      <div class="gallery-item" role="button" tabindex="0" data-src="assets/portfolioimages/doorinstallation.jpeg"><img src="assets/portfolioimages/doorinstallation.jpeg"><div class="gallery-overlay"></div></div>
+      <div class="gallery-item" role="button" tabindex="0" data-src="assets/portfolioimages/wallpanelling.jpeg"><img src="assets/portfolioimages/wallpanelling.jpeg"><div class="gallery-overlay"></div></div>
+
     </div>
+  </section>
 
-    <div class="gallery-item" data-src="assets/portfolioimages/crownmoulding.png">
-      <img src="assets/portfolioimages/crownmoulding.png" alt="Crown Moulding">
-    </div>
-
-    <div class="gallery-item" data-src="assets/portfolioimages/doorinstallation.jpeg">
-      <img src="assets/portfolioimages/doorinstallation.jpeg" alt="Door Installation">
-    </div>
-
-    <div class="gallery-item" data-src="assets/portfolioimages/wallpanelling.jpeg">
-      <img src="assets/portfolioimages/wallpanelling.jpeg" alt="Wall Panelling">
-    </div>
-
-  </div>
-</section>
-
-<div class="lightbox" id="lightbox" aria-hidden="true">
-  <div class="lightbox-card" role="dialog" aria-modal="true" aria-label="Project preview">
-    <div class="lightbox-media">
-      <img id="lightboxImg" alt="Project image" src="">
-    </div>
-    <div class="lightbox-info">
-      <div class="lightbox-actions">
-        <button class="lightbox-close" id="lightboxClose" type="button">Close</button>
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-card" style="position: relative;">
+      <div class="lightbox-media">
+        <img id="lightboxImg">
       </div>
+      <button class="lightbox-close" id="lightboxClose">Close</button>
     </div>
   </div>
-</div>
 
-<script>
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightboxImg");
-  const lightboxClose = document.getElementById("lightboxClose");
+  <!-- SCRIPT -->
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const primaryNav = document.getElementById("primaryNav");
 
-  function openLightbox(item) {
-    const src = item.getAttribute("data-src");
-    lightboxImg.src = src;
+    function setMenu(open) {
+      primaryNav.classList.toggle("open", open);
+      menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    }
 
-    lightbox.classList.add("open");
-    lightbox.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-    lightboxClose.focus();
-  }
+    menuBtn.addEventListener("click", () => {
+      const isOpen = primaryNav.classList.contains("open");
+      setMenu(!isOpen);
+    });
 
-  function closeLightbox() {
-    lightbox.classList.remove("open");
-    lightbox.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
-    lightboxImg.src = "";
-  }
+    document.querySelectorAll(".nav-link").forEach(link => {
+      link.addEventListener("click", () => setMenu(false));
+    });
 
-  document.querySelectorAll(".gallery-item").forEach(item => {
-    item.addEventListener("click", () => openLightbox(item));
-  });
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxClose = document.getElementById("lightboxClose");
 
-  lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) closeLightbox();
-  });
+    function openLightbox(item) {
+      lightboxImg.src = item.getAttribute("data-src");
+      lightbox.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
 
-  lightboxClose.addEventListener("click", closeLightbox);
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      document.body.style.overflow = "";
+      lightboxImg.src = "";
+    }
 
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && lightbox.classList.contains("open")) closeLightbox();
-  });
-</script>
+    document.querySelectorAll(".gallery-item").forEach(item => {
+      item.addEventListener("click", () => openLightbox(item));
+    });
+
+    lightbox.addEventListener("click", e => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    lightboxClose.addEventListener("click", closeLightbox);
+
+    window.addEventListener("keydown", e => {
+      if (e.key === "Escape") closeLightbox();
+    });
+  </script>
 
 </body>
 </html>
