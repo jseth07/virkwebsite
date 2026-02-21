@@ -13,6 +13,7 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
 html {
   scroll-behavior: smooth;
   overflow-y: scroll;
@@ -80,6 +81,7 @@ nav .logo::after {
   background: var(--accent-gold);
   transition: width 0.35s ease;
 }
+
 nav .logo:hover::after { width: 100%; }
 
 .nav-links {
@@ -141,6 +143,7 @@ nav .logo:hover::after { width: 100%; }
   transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
   white-space: nowrap;
 }
+
 .nav-cta:hover {
   transform: translateY(-1px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
@@ -234,6 +237,7 @@ nav .logo:hover::after { width: 100%; }
   margin: 0 auto 2.2rem;
   max-width: 920px;
 }
+
 .trust-pill {
   border: 1px solid rgba(212,175,55,0.35);
   background: rgba(245,241,232,0.08);
@@ -251,6 +255,7 @@ nav .logo:hover::after { width: 100%; }
   flex-wrap: wrap;
 }
 
+/* CTA */
 .cta-button {
   display: inline-block;
   padding: 1.15rem 2.7rem;
@@ -276,6 +281,19 @@ nav .logo:hover::after { width: 100%; }
   border: 2px solid var(--accent-gold);
   color: var(--accent-gold);
 }
+
+/* Utilities (replacing inline styles) */
+.cta-buttons-tight { margin: 0; }
+.cta-button-small {
+  padding: 0.95rem 1.6rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+.center-cta {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+.info-item-tight { margin-top: 1.2rem; }
 
 /* =========================
    Sections Base
@@ -303,6 +321,7 @@ h2 {
   position: relative;
   display: inline-block;
 }
+
 h2::after {
   content: "";
   position: absolute;
@@ -442,6 +461,7 @@ h2::after {
 }
 
 .service-card ul { list-style: none; margin-top: 1rem; }
+
 .service-card li {
   padding: 0.45rem 0;
   padding-left: 1.4rem;
@@ -449,6 +469,7 @@ h2::after {
   font-size: 1.02rem;
   color: var(--text-dark);
 }
+
 .service-card li::before {
   content: "✓";
   position: absolute;
@@ -542,6 +563,12 @@ h2::after {
 .gallery-item:hover img { transform: scale(1.06); }
 .gallery-item:hover .gallery-overlay { opacity: 1; }
 
+/* Improve keyboard accessibility on clickable tiles */
+.gallery-item:focus-visible {
+  outline: 3px solid rgba(212,175,55,0.9);
+  outline-offset: 4px;
+}
+
 /* =========================
    Lightbox
 ========================= */
@@ -555,6 +582,7 @@ h2::after {
   padding: 2rem;
   z-index: 2000;
 }
+
 .lightbox.open { display: flex; }
 
 .lightbox-card {
@@ -619,7 +647,20 @@ h2::after {
   letter-spacing: 1px;
   color: var(--wood-dark);
 }
+
 .lightbox-close:hover { border-color: rgba(212,175,55,0.6); }
+
+.lightbox-close:focus-visible,
+.menu-btn:focus-visible,
+.nav-links a:focus-visible,
+.nav-cta:focus-visible,
+.quick-btn:focus-visible,
+.mobile-btn:focus-visible,
+.wa-float:focus-visible,
+.social-icon:focus-visible {
+  outline: 3px solid rgba(212,175,55,0.9);
+  outline-offset: 3px;
+}
 
 /* =========================
    Contact
@@ -757,6 +798,7 @@ h2::after {
   text-decoration: none;
   transition: color 0.2s ease;
 }
+
 .info-item a:hover { color: var(--accent-gold); }
 
 .social-icon {
@@ -814,7 +856,11 @@ footer {
   margin-top: 4rem;
 }
 
-footer p { font-size: 1.05rem; letter-spacing: 1px; opacity: 0.95; }
+footer p {
+  font-size: 1.05rem;
+  letter-spacing: 1px;
+  opacity: 0.95;
+}
 
 /* =========================
    Sticky mobile bottom bar
@@ -851,12 +897,14 @@ footer p { font-size: 1.05rem; letter-spacing: 1px; opacity: 0.95; }
   border: 2px solid transparent;
   transition: transform 0.2s ease, filter 0.2s ease;
 }
+
 .mobile-btn:active { transform: translateY(1px); }
 
 .mobile-btn.call {
   background: var(--accent-gold);
   color: var(--wood-dark);
 }
+
 .mobile-btn.quote {
   background: transparent;
   border-color: rgba(212,175,55,0.6);
@@ -897,8 +945,16 @@ footer p { font-size: 1.05rem; letter-spacing: 1px; opacity: 0.95; }
 /* =========================
    Reveal
 ========================= */
-.reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* =========================
    Hero background zoom
@@ -954,44 +1010,55 @@ footer p { font-size: 1.05rem; letter-spacing: 1px; opacity: 0.95; }
 
   .hero h1 { font-size: 3rem; }
   .hero .tagline { font-size: 1.25rem; }
+
   h2 { font-size: 2.6rem; }
 
-  .about-content, .contact-content { grid-template-columns: 1fr; gap: 2rem; }
-  .about-image { min-height: 320px; }
+  .about-content,
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-image { min-height: 320px; height: auto; }
 
   .stats { grid-template-columns: 1fr; }
+
   .lightbox-card { grid-template-columns: 1fr; }
   .lightbox-info { padding: 1.2rem; }
 
   .mobile-bar { display: block; }
   body { padding-bottom: 82px; }
-  .hero { min-height: calc(100vh - 86px - 82px); animation: none; }
+
+  .hero {
+    min-height: calc(100vh - 86px - 82px);
+    animation: none;
+  }
 
   .quick-buttons { grid-template-columns: 1fr; }
   .wa-float { bottom: 170px; }
 }
 
-@media (max-width: 860px) {
-  ...
-}
-
-/* Portfolio page only */
+/* =========================
+   Portfolio page only
+========================= */
 .page-portfolio section {
   padding-top: 4rem;
 }
 
 .page-portfolio .gallery-item {
-  cursor: default;
+  cursor: pointer;
 }
 
-.page-portfolio .gallery-overlay,
+/* Hide homepage style captions on portfolio tiles */
 .page-portfolio .gallery-caption {
   display: none;
 }
-/* Portfolio lightbox fix */
+
+/* Portfolio lightbox layout */
 .page-portfolio .lightbox-card {
   grid-template-columns: 1fr;
   width: min(1100px, 96vw);
+  position: relative;
 }
 
 .page-portfolio .lightbox-info {
@@ -1000,20 +1067,6 @@ footer p { font-size: 1.05rem; letter-spacing: 1px; opacity: 0.95; }
 
 .page-portfolio .lightbox-media {
   min-height: 0;
-}
-
-.page-portfolio .lightbox-close {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  z-index: 5;
-  background: rgba(245, 241, 232, 0.95);
-  border-color: rgba(44, 24, 16, 0.25);
-}
-/* Portfolio lightbox fix */
-.page-portfolio .lightbox-card {
-  grid-template-columns: 1fr;
-  width: min(1100px, 96vw);
 }
 
 .page-portfolio .lightbox-close {

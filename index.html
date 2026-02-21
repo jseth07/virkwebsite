@@ -17,29 +17,29 @@
       </a>
 
       <ul class="nav-links" id="primaryNav">
-        <li><a class="nav-link" href="#home">Home</a></li>
-        <li><a class="nav-link" href="#about">About</a></li>
-        <li><a class="nav-link" href="#services">Services</a></li>
-        <li><a class="nav-link" href="#gallery">Gallery</a></li>
+        <li><a class="nav-link" href="#home" data-section="home">Home</a></li>
+        <li><a class="nav-link" href="#about" data-section="about">About</a></li>
+        <li><a class="nav-link" href="#services" data-section="services">Services</a></li>
+        <li><a class="nav-link" href="#gallery" data-section="gallery">Gallery</a></li>
         <li><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-        <li><a class="nav-link" href="#contact">Contact</a></li>
+        <li><a class="nav-link" href="#contact" data-section="contact">Contact</a></li>
       </ul>
 
       <div class="nav-actions">
         <a class="nav-cta" href="tel:+17809138054">Call: (780) 913-8054</a>
-        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="primaryNav">MENU</button>
+        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="primaryNav" aria-label="Open menu">MENU</button>
       </div>
     </div>
   </nav>
 
   <main id="home">
-    <section class="hero">
+    <section class="hero" aria-label="Hero">
       <div class="hero-content reveal">
         <h1>VIRK CARPENTRY</h1>
         <p class="tagline">Expert Finish Carpentry &amp; Interior Woodwork</p>
         <p class="description">Precision craftsmanship for residential projects across the Edmonton area</p>
 
-        <div class="trust-lines">
+        <div class="trust-lines" aria-label="Trust highlights">
           <div class="trust-pill">Free estimates</div>
           <div class="trust-pill">Clean, precise finishes</div>
           <div class="trust-pill">Clear communication</div>
@@ -79,7 +79,7 @@
       </div>
 
       <div class="about-image">
-        <img src="assets/images/about.png" alt="Finish carpentry project" />
+        <img src="assets/images/about.png" alt="Finish carpentry project" loading="lazy" decoding="async" />
       </div>
     </div>
 
@@ -111,7 +111,7 @@
     <div class="services-grid reveal">
       <div class="service-card">
         <div class="service-topline">
-          <div class="service-icon">🪚</div>
+          <div class="service-icon" aria-hidden="true">🪚</div>
           <span class="badge">Most requested</span>
         </div>
         <h3>Finish Carpentry</h3>
@@ -125,7 +125,7 @@
 
       <div class="service-card">
         <div class="service-topline">
-          <div class="service-icon">🚪</div>
+          <div class="service-icon" aria-hidden="true">🚪</div>
           <span class="badge">Popular</span>
         </div>
         <h3>Doors &amp; Installation</h3>
@@ -139,7 +139,7 @@
 
       <div class="service-card">
         <div class="service-topline">
-          <div class="service-icon">🏠</div>
+          <div class="service-icon" aria-hidden="true">🏠</div>
           <span class="badge">Feature upgrade</span>
         </div>
         <h3>Wall Features</h3>
@@ -153,7 +153,7 @@
 
       <div class="service-card">
         <div class="service-topline">
-          <div class="service-icon">🔥</div>
+          <div class="service-icon" aria-hidden="true">🔥</div>
           <span class="badge">Custom</span>
         </div>
         <h3>Custom Woodwork</h3>
@@ -167,7 +167,7 @@
 
       <div class="service-card">
         <div class="service-topline">
-          <div class="service-icon">👔</div>
+          <div class="service-icon" aria-hidden="true">👔</div>
           <span class="badge">Storage</span>
         </div>
         <h3>Closet Systems</h3>
@@ -181,7 +181,7 @@
 
       <div class="service-card">
         <div class="service-topline">
-          <div class="service-icon">🛠️</div>
+          <div class="service-icon" aria-hidden="true">🛠️</div>
           <span class="badge">Support</span>
         </div>
         <h3>Renovation Support</h3>
@@ -196,9 +196,9 @@
 
     <div class="services-mini-cta reveal">
       <p><strong>Not sure what you need?</strong> Text or email a few photos and a quick description. We can guide you and give a clean estimate.</p>
-      <div class="cta-buttons" style="margin:0;">
-        <a href="tel:+17809138054" class="cta-button" style="padding:0.95rem 1.6rem;">CALL</a>
-        <a href="#contact" class="cta-button cta-button-secondary" style="padding:0.95rem 1.6rem;">GET QUOTE</a>
+      <div class="cta-buttons cta-buttons-tight">
+        <a href="tel:+17809138054" class="cta-button cta-button-small">CALL</a>
+        <a href="#contact" class="cta-button cta-button-secondary cta-button-small">GET QUOTE</a>
       </div>
     </div>
   </section>
@@ -213,8 +213,9 @@
       <div class="gallery-item" role="button" tabindex="0"
            data-title="Baseboards & Trim"
            data-details="MDF baseboards with tight joints and clean caulk lines."
-           data-src="assets/portfolioimages/baseboard.png">
-        <img alt="Baseboards and Trim" src="assets/portfolioimages/baseboard.png">
+           data-src="assets/portfolioimages/baseboard.png"
+           aria-label="Open project: Baseboards and Trim">
+        <img alt="Baseboards and Trim" src="assets/portfolioimages/baseboard.png" loading="lazy" decoding="async">
         <div class="gallery-overlay"></div>
         <div class="gallery-caption">
           <div class="title">Baseboards & Trim</div>
@@ -225,8 +226,9 @@
       <div class="gallery-item" role="button" tabindex="0"
            data-title="Crown Moulding"
            data-details="Smooth crown install with consistent reveals and sharp corners."
-           data-src="assets/portfolioimages/crownmoulding.png">
-        <img alt="Crown Moulding" src="assets/portfolioimages/crownmoulding.png">
+           data-src="assets/portfolioimages/crownmoulding.png"
+           aria-label="Open project: Crown Moulding">
+        <img alt="Crown Moulding" src="assets/portfolioimages/crownmoulding.png" loading="lazy" decoding="async">
         <div class="gallery-overlay"></div>
         <div class="gallery-caption">
           <div class="title">Crown Moulding</div>
@@ -237,8 +239,9 @@
       <div class="gallery-item" role="button" tabindex="0"
            data-title="Door Installation"
            data-details="Plumb and level door install with clean casing and smooth swing."
-           data-src="assets/portfolioimages/doorinstallation.jpeg">
-        <img alt="Door Installation" src="assets/portfolioimages/doorinstallation.jpeg">
+           data-src="assets/portfolioimages/doorinstallation.jpeg"
+           aria-label="Open project: Door Installation">
+        <img alt="Door Installation" src="assets/portfolioimages/doorinstallation.jpeg" loading="lazy" decoding="async">
         <div class="gallery-overlay"></div>
         <div class="gallery-caption">
           <div class="title">Door Installation</div>
@@ -249,8 +252,9 @@
       <div class="gallery-item" role="button" tabindex="0"
            data-title="Wall Panelling"
            data-details="Straight layouts with consistent spacing and paint-ready finish."
-           data-src="assets/portfolioimages/wallpanelling.jpeg">
-        <img alt="Wall Panelling" src="assets/portfolioimages/wallpanelling.jpeg">
+           data-src="assets/portfolioimages/wallpanelling.jpeg"
+           aria-label="Open project: Wall Panelling">
+        <img alt="Wall Panelling" src="assets/portfolioimages/wallpanelling.jpeg" loading="lazy" decoding="async">
         <div class="gallery-overlay"></div>
         <div class="gallery-caption">
           <div class="title">Wall Panelling</div>
@@ -259,7 +263,7 @@
       </div>
     </div>
 
-    <div style="text-align:center; margin-top:2.5rem;">
+    <div class="center-cta">
       <a href="portfolio.html" class="cta-button">VIEW FULL PORTFOLIO</a>
     </div>
   </section>
@@ -304,27 +308,27 @@
         <h3>Contact Information</h3>
 
         <div class="info-item">
-          <span class="info-icon">📍</span>
-          <span>7341 Armour Cres SW<br />Edmonton, Alberta</span>
+          <span class="info-icon" aria-hidden="true">📍</span>
+          <span>Edmonton, Alberta<br />Serving nearby areas</span>
         </div>
 
         <div class="info-item">
-          <span class="info-icon">📞</span>
+          <span class="info-icon" aria-hidden="true">📞</span>
           <a href="tel:+17809138054">+1 (780) 913-8054</a>
         </div>
 
         <div class="info-item">
-          <span class="info-icon">✉️</span>
+          <span class="info-icon" aria-hidden="true">✉️</span>
           <a href="mailto:virkcarpentry@gmail.com">virkcarpentry@gmail.com</a>
         </div>
 
         <div class="info-item">
-          <span class="info-icon">🏘️</span>
+          <span class="info-icon" aria-hidden="true">🏘️</span>
           <span>Proudly serving the Edmonton area and surrounding communities</span>
         </div>
 
-        <div class="info-item" style="margin-top:1.2rem;">
-          <span class="info-icon">✅</span>
+        <div class="info-item info-item-tight">
+          <span class="info-icon" aria-hidden="true">✅</span>
           <span><strong>Fast estimates:</strong> send photos + quick details for a cleaner quote.</span>
         </div>
 
@@ -377,8 +381,8 @@
         <h3 id="lightboxTitle"></h3>
         <p id="lightboxDetails"></p>
         <div class="lightbox-actions">
-          <a class="cta-button" href="tel:+17809138054" style="padding:0.85rem 1.2rem; font-size:1rem; letter-spacing:1px;">Call Now</a>
-          <a class="cta-button cta-button-secondary" href="#contact" style="padding:0.85rem 1.2rem; font-size:1rem; letter-spacing:1px;">Get Quote</a>
+          <a class="cta-button cta-button-small" href="tel:+17809138054">Call Now</a>
+          <a class="cta-button cta-button-secondary cta-button-small" href="#contact">Get Quote</a>
           <button class="lightbox-close" id="lightboxClose" type="button">Close</button>
         </div>
       </div>
@@ -392,6 +396,7 @@
     function setMenu(open) {
       primaryNav.classList.toggle("open", open);
       menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+      menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     }
 
     menuBtn.addEventListener("click", () => {
@@ -403,17 +408,6 @@
       link.addEventListener("click", () => setMenu(false));
     });
 
-    function setActiveNav(hash) {
-      const target = (hash || "#home").replace("#", "");
-      document.querySelectorAll(".nav-link").forEach(a => {
-        const isActive = a.getAttribute("href") === "#" + target;
-        a.classList.toggle("active", isActive);
-      });
-    }
-
-    window.addEventListener("hashchange", () => setActiveNav(location.hash));
-    setActiveNav(location.hash);
-
     const revealEls = document.querySelectorAll(".reveal");
     const revealObs = new IntersectionObserver((entries) => {
       entries.forEach(e => {
@@ -424,12 +418,42 @@
     revealEls.forEach(el => revealObs.observe(el));
 
     const lightbox = document.getElementById("lightbox");
+    const lightboxCard = lightbox.querySelector(".lightbox-card");
     const lightboxImg = document.getElementById("lightboxImg");
     const lightboxTitle = document.getElementById("lightboxTitle");
     const lightboxDetails = document.getElementById("lightboxDetails");
     const lightboxClose = document.getElementById("lightboxClose");
 
+    let lastFocusedEl = null;
+
+    function getFocusable(container) {
+      return Array.from(container.querySelectorAll(
+        'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+      ));
+    }
+
+    function trapTab(e) {
+      if (!lightbox.classList.contains("open")) return;
+      if (e.key !== "Tab") return;
+
+      const focusables = getFocusable(lightboxCard);
+      if (!focusables.length) return;
+
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+
     function openLightbox(item) {
+      lastFocusedEl = document.activeElement;
+
       const src = item.getAttribute("data-src");
       const title = item.getAttribute("data-title") || "Project";
       const details = item.getAttribute("data-details") || "";
@@ -441,14 +465,22 @@
       lightbox.classList.add("open");
       lightbox.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
+
       lightboxClose.focus();
     }
 
     function closeLightbox() {
+      if (!lightbox.classList.contains("open")) return;
+
       lightbox.classList.remove("open");
       lightbox.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";
       lightboxImg.src = "";
+
+      if (lastFocusedEl && typeof lastFocusedEl.focus === "function") {
+        lastFocusedEl.focus();
+      }
+      lastFocusedEl = null;
     }
 
     document.querySelectorAll(".gallery-item").forEach(item => {
@@ -468,10 +500,39 @@
     lightboxClose.addEventListener("click", closeLightbox);
 
     window.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && lightbox.classList.contains("open")) closeLightbox();
+      if (e.key === "Escape") closeLightbox();
+      trapTab(e);
     });
 
-    if (!location.hash) location.hash = "#home";
+    function setActiveNavById(id) {
+      document.querySelectorAll(".nav-link[data-section]").forEach(a => {
+        a.classList.toggle("active", a.getAttribute("data-section") === id);
+      });
+    }
+
+    const sectionIds = ["home", "about", "services", "gallery", "contact"];
+    const sectionEls = sectionIds
+      .map(id => document.getElementById(id))
+      .filter(Boolean);
+
+    const navSpy = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter(e => e.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (visible && visible.target && visible.target.id) {
+        setActiveNavById(visible.target.id);
+      }
+    }, { threshold: [0.25, 0.35, 0.45, 0.6] });
+
+    sectionEls.forEach(el => navSpy.observe(el));
+
+    if (location.hash) {
+      const clean = location.hash.replace("#", "");
+      if (sectionIds.includes(clean)) setActiveNavById(clean);
+    } else {
+      setActiveNavById("home");
+    }
   </script>
 </body>
 </html>
