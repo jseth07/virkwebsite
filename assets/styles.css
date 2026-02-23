@@ -35,9 +35,10 @@ a { color: inherit; }
 nav {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   background: var(--wood-dark);
-  padding: 1.1rem 0;
+  padding: 0.6rem 0;
   z-index: 1000;
   box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
@@ -49,41 +50,27 @@ nav .container {
   display: flex;
   align-items: center;
   gap: 1.25rem;
+  justify-content: space-between;
 }
 
+/* Logo: your HTML is <a class="logo"><img class="logo-img"></a> */
 nav .logo {
-  font-family: "Bebas Neue", sans-serif;
-  color: var(--accent-gold);
-  letter-spacing: 2px;
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
-  position: relative;
   line-height: 1;
   white-space: nowrap;
-  display: flex;
-  align-items: center;
   flex: 0 0 auto;
 }
 
-nav .logo .company-name {
+/* IMPORTANT: size the img, not the <a> */
+nav .logo .logo-img {
+  height: 64px;
+  width: auto;
   display: block;
-  font-size: 3.2rem;
-  line-height: 1;
-  letter-spacing: 3px;
 }
 
-nav .logo::after {
-  content: "";
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 0;
-  height: 3px;
-  background: var(--accent-gold);
-  transition: width 0.35s ease;
-}
-
-nav .logo:hover::after { width: 100%; }
-
+/* Nav links */
 .nav-links {
   display: flex;
   gap: 2.2rem;
@@ -91,6 +78,8 @@ nav .logo:hover::after { width: 100%; }
   align-items: center;
   flex: 1 1 auto;
   justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
@@ -121,11 +110,11 @@ nav .logo:hover::after { width: 100%; }
 .nav-links a.active { color: var(--accent-gold); }
 .nav-links a.active::before { width: 100%; }
 
+/* Right side actions */
 .nav-actions {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-left: auto;
   flex: 0 0 auto;
 }
 
@@ -282,7 +271,7 @@ nav .logo:hover::after { width: 100%; }
   color: var(--accent-gold);
 }
 
-/* Utilities (replacing inline styles) */
+/* Utilities */
 .cta-buttons-tight { margin: 0; }
 .cta-button-small {
   padding: 0.95rem 1.6rem;
@@ -563,7 +552,6 @@ h2::after {
 .gallery-item:hover img { transform: scale(1.06); }
 .gallery-item:hover .gallery-overlay { opacity: 1; }
 
-/* Improve keyboard accessibility on clickable tiles */
 .gallery-item:focus-visible {
   outline: 3px solid rgba(212,175,55,0.9);
   outline-offset: 4px;
@@ -650,6 +638,7 @@ h2::after {
 
 .lightbox-close:hover { border-color: rgba(212,175,55,0.6); }
 
+/* Focus styles */
 .lightbox-close:focus-visible,
 .menu-btn:focus-visible,
 .nav-links a:focus-visible,
@@ -985,6 +974,8 @@ footer p {
   nav .container { padding: 0 1.25rem; }
   .menu-btn { display: inline-flex; }
 
+  nav .logo .logo-img { height: 42px; }
+
   .nav-links {
     position: absolute;
     top: 86px;
@@ -1020,7 +1011,6 @@ footer p {
   }
 
   .about-image { min-height: 320px; height: auto; }
-
   .stats { grid-template-columns: 1fr; }
 
   .lightbox-card { grid-template-columns: 1fr; }
@@ -1041,33 +1031,21 @@ footer p {
 /* =========================
    Portfolio page only
 ========================= */
-.page-portfolio section {
-  padding-top: 4rem;
-}
+.page-portfolio section { padding-top: 4rem; }
 
-.page-portfolio .gallery-item {
-  cursor: pointer;
-}
+.page-portfolio .gallery-item { cursor: pointer; }
 
-/* Hide homepage style captions on portfolio tiles */
-.page-portfolio .gallery-caption {
-  display: none;
-}
+.page-portfolio .gallery-caption { display: none; }
 
-/* Portfolio lightbox layout */
 .page-portfolio .lightbox-card {
   grid-template-columns: 1fr;
   width: min(1100px, 96vw);
   position: relative;
 }
 
-.page-portfolio .lightbox-info {
-  display: none;
-}
+.page-portfolio .lightbox-info { display: none; }
 
-.page-portfolio .lightbox-media {
-  min-height: 0;
-}
+.page-portfolio .lightbox-media { min-height: 0; }
 
 .page-portfolio .lightbox-close {
   position: absolute;
@@ -1077,3 +1055,8 @@ footer p {
   background: rgba(245, 241, 232, 0.95);
   border-color: rgba(44, 24, 16, 0.25);
 }
+
+/* Debug helpers (optional). Uncomment when needed. */
+/*
+body { outline: 6px solid lime; }
+*/
