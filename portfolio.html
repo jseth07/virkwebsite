@@ -6,7 +6,7 @@
   <title>Portfolio | Virk Carpentry & Construction Ltd</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/styles.css?v=999">
 </head>
 
 <body class="page-portfolio">
@@ -15,8 +15,8 @@
   <nav>
     <div class="container">
       <a href="index.html#home" class="logo" aria-label="Virk Carpentry Home">
-        <span class="company-name">VC</span>
-      </a>
+  <img src="assets/images/virkcarpentrylogo-whitetext.svg" alt="Virk Carpentry" class="logo-img">
+</a>
 
       <ul class="nav-links" id="primaryNav">
         <li><a class="nav-link" href="index.html#home">Home</a></li>
@@ -133,14 +133,16 @@
     </div>
   </section>
 
-  <!-- LIGHTBOX (no visible close button) -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <div class="lightbox-card" role="dialog" aria-modal="true" aria-label="Image preview">
-      <div class="lightbox-media">
-        <img id="lightboxImg" alt="Portfolio image" src="">
-      </div>
+  <!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox-card" role="dialog" aria-modal="true" aria-label="Image preview">
+    <button class="lightbox-close" id="lightboxClose" type="button">Close</button>
+
+    <div class="lightbox-media">
+      <img id="lightboxImg" alt="Portfolio image" src="">
     </div>
   </div>
+</div>
 
   <script>
     const menuBtn = document.getElementById("menuBtn");
@@ -162,8 +164,9 @@
     });
 
     const lightbox = document.getElementById("lightbox");
-    const lightboxCard = lightbox.querySelector(".lightbox-card");
-    const lightboxImg = document.getElementById("lightboxImg");
+const lightboxCard = lightbox.querySelector(".lightbox-card");
+const lightboxImg = document.getElementById("lightboxImg");
+const lightboxClose = document.getElementById("lightboxClose");
 
     let lastFocusedEl = null;
 
@@ -177,8 +180,8 @@
       lightbox.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
 
-      lightboxCard.setAttribute("tabindex", "-1");
-      lightboxCard.focus();
+      lightboxClose.focus();
+      lightboxClose.addEventListener("click", closeLightbox);
     }
 
     function closeLightbox() {
@@ -223,5 +226,8 @@
   <path d="M26.67 5.33A14.9 14.9 0 0 0 16.07 1C7.86 1 1.18 7.68 1.18 15.9c0 2.62.69 5.18 2 7.45L1 31l7.86-2.07a14.86 14.86 0 0 0 7.21 1.84h.01c8.22 0 14.9-6.68 14.9-14.9 0-3.98-1.55-7.71-4.31-10.54Zm-10.6 22.9h-.01c-2.24 0-4.43-.6-6.32-1.72l-.45-.27-4.66 1.23 1.24-4.54-.3-.47a12.4 12.4 0 0 1-1.9-6.58c0-6.86 5.59-12.44 12.46-12.44 3.32 0 6.44 1.29 8.78 3.63a12.33 12.33 0 0 1 3.64 8.8c0 6.86-5.59 12.44-12.48 12.44Z"/>
 </svg>
 </a>
+<footer>
+  <p>&copy; 2026 Virk Carpentry &amp; Construction Ltd. All Rights Reserved. Finish Carpentry &amp; Interior Woodwork.</p>
+</footer>
 </body>
 </html>
